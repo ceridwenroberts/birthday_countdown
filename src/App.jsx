@@ -9,7 +9,7 @@ import './App.css'
 // import Globe from './assets/globe.svg'
 
 
-function UserBirthday() {
+function App() {
 const [startDate, setStartDate] = useState(new Date())
 const [untilBDay, setUntilBDay] = useState(getInterval)
 const [count, setCount] = useState(0)
@@ -29,23 +29,16 @@ useInterval(() => {
 }, 1000);
 
   return (
-    <div>
-      <DatePicker selected={startDate}  onChange={(date) => setStartDate(date)}
-        inline
-      />
+    <>
+    {/* <div>
+     
       <h1 className="days">{untilBDay.months} months<br/>
             {untilBDay.days} days<br />
             {untilBDay.hours}:{untilBDay.minutes}:{untilBDay.seconds}</h1>
           <h2 className="time">count: {count}</h2>
-      <p>The selected date is: {startDate.toString()}.</p>
-    </div>
-  );
-}
-
-
-function App() {
-  // console.log(birthday);
-  return (
+       <p>The selected date is: {startDate.toString()}.</p>
+    </div> */}
+ 
     <div>
       <div className='App'>
       <div className='pageWrapper'>
@@ -55,9 +48,11 @@ function App() {
         </div>
         <div className='row rowMiddle'>
           <div className='calendarContainer box'>
-            <div className='calendar box'>the calendar      
-            <UserBirthday />
-            </div>
+          <DatePicker selected={startDate}  onChange={(date) => setStartDate(date)}
+        inline
+      />
+              {/* <UserBirthday /> */}
+            {/* <div className='calendar box'>the calendar</div> */}
           </div>
           <div className='infoWrapper'>
             <div className='headingContainer box'><h1>Hey Shorty, When's your birthday?!</h1></div>
@@ -71,18 +66,17 @@ function App() {
         <div className='row rowBottom'>
         <div className='puffContainer box'></div>
         <div className='resultContainer box'>
-          <div className='days time box'><span id='days'>354</span> days</div>
-          <div className='hours time box'><span id='hours' className='stamp'>14</span>h</div>
-          <div className='minutes time box'><span id='minutes'>14</span>mins</div>
-          <div className='seconds time box'><span id='seconds'>14</span>sec</div>
+          <div className='days time box'><span id='days'>{untilBDay.days}</span> days</div>
+          <div className='hours time box'><span id='hours' className='stamp'> {untilBDay.hours}</span>h</div>
+          <div className='minutes time box'><span id='minutes'> {untilBDay.minutes}</span>mins</div>
+          <div className='seconds time box'><span id='seconds'> {untilBDay.seconds}</span>sec</div>
         </div>
       </div>
       </div>
       
     </div>
-
-
     </div>
+    </>
   )
 }
 
