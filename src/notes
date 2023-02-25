@@ -37,6 +37,8 @@ box-shadow: 6.40717px 6.40717px 0px #000000;
 border-radius: 21.3572px;
 }
 
+
+
  .react-datepicker__day, .react-datepicker__time-name {
   /* width: 1.7rem; */
   /* line-height: 1.7rem; */
