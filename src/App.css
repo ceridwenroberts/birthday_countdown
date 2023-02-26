@@ -134,13 +134,14 @@ body {
   flex-wrap: wrap;
   width: 1440px;
   height: 1024px;
-  outline: solid 2px var(--c-black);
+  outline: solid 3px var(--c-black);
   border-radius: 20px;
   -webkit-border-radius: 20px;
   -moz-border-radius: 20px;
   -ms-border-radius: 20px;
   -o-border-radius: 20px;
   position: relative;
+ 
 }
 
 

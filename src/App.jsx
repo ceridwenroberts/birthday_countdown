@@ -104,6 +104,7 @@ function App() {
     );
   }
 
+  //? Why doesn't this work? What's the diff?
   // function Restults({untilBDay, bDayToday}) {
   //   let monthDiv, dayDiv, hourDiv, minDiv, sekDiv
   //   if (startDate === undefined) {
