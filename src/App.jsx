@@ -7,11 +7,27 @@ import "react-datepicker/dist/react-datepicker.css";
 import './App.css'
 import Bigstar from './assets/star1.svg'
 import Smallstar from './assets/star2.svg'
-import Arrow from './assets/ArrowIcon.svg'
+import Arrow from './assets/Arrow_Horizontal.svg'
+import PlayIcon from './assets/PlayIcon.svg'
+
+
 // import Globe from './assets/globe.svg'
 
-
 function App() {
+
+  function PlayBox() {
+    return (
+      <div className="playBoxContainer">
+        <a link href='https://www.youtube.com/watch?v=5qm8PH4xAss&list=RD5qm8PH4xAss&start_radio=1' target="_blank">
+          <div className="playBox">
+            <img className="playIcon" src={PlayIcon} />
+          </div>
+        </a>
+      </div>
+    )
+  }
+
+
   const [startDate, setStartDate] = useState(0)
   const [untilBDay, setUntilBDay] = useState(getInterval)
   const [count, setCount] = useState(0)
@@ -22,6 +38,7 @@ function App() {
       end: startDate ? startOfDay(startDate) : new Date()
     })
     // console.log(interval)
+    // console.log({ startDate })
     return interval
   }
 
@@ -31,7 +48,97 @@ function App() {
     setCount(count + 1);
   }, 1000);
 
+
+
+
   const bDayToday = isToday(startDate)
+
+  function Restults({ untilBDay, bDayToday }) {
+    let monthDiv, dayDiv, hourDiv, minDiv, sekDiv, puff;
+    if (startDate) {
+      if (bDayToday) {
+        monthDiv = null;
+        dayDiv = "Happy";
+        hourDiv = "birth-";
+        minDiv = "day!";
+        sekDiv = <PlayBox />;
+      } else {
+        monthDiv = <><span id='months'>{untilBDay.months}</span> months</>
+        dayDiv = <><span id='minutes'> {untilBDay.days}</span> days</>
+        hourDiv = <><span id='hours' className='stamp'> {untilBDay.hours}</span> h</>
+        minDiv = <><span id='minutes'> {untilBDay.minutes}</span> mins</>
+        sekDiv = <><span id='seconds'> {untilBDay.seconds}</span> sec</>
+      }
+    } else {
+      monthDiv = <><div id="questionMark"><span>?</span></div></>;
+      dayDiv = <><div id="questionMark"><span>?</span></div></>;
+      hourDiv = <><div id="questionMark"><span>?</span></div></>;
+      minDiv = <><div id="questionMark"><span>?</span></div></>;
+      sekDiv = <><div id="questionMark"><span>?</span></div></>;
+    }
+    return (
+      <div className="row rowBottom">
+        {bDayToday ? (
+          <div className='cakeContainer box' >
+            <div class="bdayCake">
+              <div class="plate"></div>
+              <div class="cream"></div>
+              <div class="candle"></div>
+              <div class="flame">
+                <div class="one">+</div>
+                <div class="two">+</div>
+                <div class="three">+</div>
+              </div>
+            </div>
+          </div>
+        ) : (<div className="puffContainer box">
+          <div className="months time box">{monthDiv}</div>
+        </div>)}
+        <div className="resultContainer box">
+          <div className="days time box">{dayDiv}</div>
+          <div className="hours time box">{hourDiv}</div>
+          <div className="minutes time box">{minDiv}</div>
+          <div className="seconds time box" id="playContainer">{sekDiv}</div>
+        </div>
+      </div>
+    );
+  }
+
+  // function Restults({untilBDay, bDayToday}) {
+  //   let monthDiv, dayDiv, hourDiv, minDiv, sekDiv
+  //   if (startDate === undefined) {
+  //     monthDiv = '';
+  //     dayDiv = '';
+  //     hourDiv = '';
+  //     minDiv = '';
+  //     sekDiv = '';
+  //   } else if (bDayToday) {
+  //     monthDiv = null;
+  //     dayDiv = "Happy";
+  //     hourDiv = "birth-";
+  //     minDiv = "day";
+  //     sekDiv = "!";
+  //   } else {
+  //     monthDiv = untilBDay.months;
+  //     dayDiv = untilBDay.days;
+  //     hourDiv = untilBDay.hours;
+  //     minDiv = untilBDay.minutes;
+  //     sekDiv = untilBDay.seconds;
+  //   }
+  //   return (
+  //     < div className='row rowBottom' >
+  //     <div className='puffContainer box' >
+  //       <div className='months time box'>{monthDiv}</div>
+  //     </div>
+  //     <div className='resultContainer box'>
+  //       <div className='days time box'> {dayDiv} </div>
+  //       <div className='hours time box'> {hourDiv} </div>
+  //       <div className='minutes time box'> {minDiv} </div>
+  //       <div className='seconds time box'>{sekDiv} </div>
+  //     </div>
+  //   </div >
+  //   )
+  // }
 
   return (
     <>
@@ -40,73 +147,38 @@ function App() {
           <div className='pageWrapper'>
 
             <div className='row rowTop'>
-              <nav className='box'><h3>Ceridwen</h3><p>Birthday Counter</p></nav>
-              <div className='topRight box'></div>
+              <nav className='box'><h3>Assignment 3</h3><p>Birthday Counter</p></nav>
+              <div className='topRight box'><p>Ceridwen Roberts</p></div>
             </div>
             <div className='row rowMiddle'>
               <div className='calendarContainer box'>
                 <DatePicker selected={startDate} onChange={(date) => setStartDate(date)}
                   inline
                 />
-                {/* <UserBirthday /> */}
-                {/* <div className='calendar box'>the calendar</div> */}
               </div>
               <div className='infoWrapper'>
                 <div className='headingContainer box'><p><span className='call'> {!bDayToday ? (`Hey Shorty, When's your birthday?!`) : (`Hey Shorty, it's your birthday!`)} </span></p>
-                  <img id="bigStarFirst" src={Bigstar} alt="decoration star" />
-                  <img id="smallStarFirst" src={Smallstar} alt="decoration star" />
-                  <img id="smallStarSecond" src={Smallstar} alt="decoration star" />
+                  {bDayToday ? (
+                    <>
+                      <img id="bigStarFirst" src={Bigstar} alt="decoration star" />
+                      <img id="smallStarFirst" src={Smallstar} alt="decoration star" />
+                      <img id="smallStarSecond" src={Smallstar} alt="decoration star" />
+                    </>
+                  ) : (<></>)}
                 </div>
-
-
-                <div className='infoContainer box'>Like this design?</div>
-                <div className='logoContainer box'> <h3>Checkout HUMY</h3></div>
+                <div className='infoContainer box'>Like this design? <img id="arrow" src={Arrow} alt="arrow icon" />
+                </div>
+                <a link href="https://dribbble.com/shots/19836318-HUMY-Property-Website" target={"_blank"}> <div className='logoContainer box'>
+                  <h3>Checkout HUMY</h3></div></a>
                 <div className='goBtnContainer'>
-                  <img id="arrowCake" src={Arrow} alt="arrow icon" />
-                  <a link className='goBtn' href="https://codepen.io/lenasta92579651/pen/VwmGzeL" target={"_blank"}>...and the cake? Click and check it.</a>
 
+                  <a link className='goBtn' href="https://codepen.io/lenasta92579651/pen/VwmGzeL" target={"_blank"}>...and the cake? Click and check it.</a>
                 </div>
               </div>
             </div>
-            {!bDayToday ? (
-              <div className='row rowBottom'>
-                <div className='puffContainer box' >
-                  <div className='months time box'><span id='months'>{untilBDay.months}</span> months</div>
-                </div>
-                <div className='resultContainer box'>
-                  <div className='days time box'><span id='days'>{untilBDay.days}</span> days</div>
-                  <div className='hours time box'><span id='hours' className='stamp'> {untilBDay.hours}</span>h</div>
-                  <div className='minutes time box'><span id='minutes'> {untilBDay.minutes}</span>mins</div>
-                  <div className='seconds time box'><span id='seconds'> {untilBDay.seconds}</span>sec</div>
-                </div>
-              </div>
-            ) : (
-              <div className='row rowBottom'>
-                <div className='cakeContainer box' >
-                  <div class="bdayCake">
-                    <div class="plate"></div>
-                    <div class="cream"></div>
-                    <div class="candle"></div>
-                    <div class="flame">
-                      <div class="one">+</div>
-                      <div class="two">+</div>
-                      <div class="three">+</div>
-                    </div>
-                  </div>
-                </div><div className='resultContainer box'>
-                  <div className='days time box'><span id='days'>Happy</span></div>
-                  <div className='hours time box'><span id='hours' className='stamp'>birth-</span></div>
-                  <div className='minutes time box'><span id='minutes'>day</span></div>
-                  <div className='seconds time box'><span id='seconds'>!!!</span></div>
-                  <img id="bigStarSecond" src={Bigstar} alt="decoration star" />
-                  <img id="bigStarThird" src={Bigstar} alt="decoration star" />
-                  <img id="smallStarThird" src={Smallstar} alt="decoration star" />
 
-                </div>
-              </div>
-            )}
+            <Restults untilBDay={untilBDay} bDayToday={bDayToday} startDate={startDate} />
           </div>
-
         </div>
       </div>
     </>
@@ -114,3 +186,5 @@ function App() {
 }
 
 export default App
+
+

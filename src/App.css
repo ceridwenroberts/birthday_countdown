@@ -88,7 +88,7 @@ h5 {
   font-family: 'Bebas Neue';
   font-style: normal;
   font-weight: 400;
-  font-size: 109px;
+  font-size: 105px;
   line-height: 86px;
   margin: 0;
 }
@@ -273,6 +273,7 @@ nav {
   height: 152px;
   width: 339px;
   padding: var(--pad-primary);
+  position: relative;
 }
 
 
@@ -283,8 +284,18 @@ nav {
   font-size: 32px;
   ;
 }
+.topRight {
+  display: flex;
+  align-items: center;
+  position: relative;
+  text-align: center;
+  justify-content: center;
 
+}
 
+.topRight p {
+font-weight: 600;
+}
 
 .goBtnContainer {
   height: 134px;
@@ -292,8 +303,8 @@ nav {
   display: flex;
   align-items: center;
   position: relative;
-
 }
+
 
 .goBtn {
   background: #FC7B53;
@@ -314,24 +325,34 @@ nav {
   position: relative;
 }
 
-#arrowCake {
+#arrow {
+ position: absolute;
+ width: 28px;
+ height: 19px;
+ top: 46px;
+ right: 60px;
+ }
 
-  position: absolute;
-  width: 28px;
-  height: 19px;
-  left: 289.65px;
-  top: 64.54px;
-}
-
-
-
-a {
-  cursor: pointer;
-  font-family: 'Poppins', sans-serif;
-  text-align: center;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+ #arrow img {transform: rotate();
+  -webkit-transform: rotate(5.78deg);
+  -moz-transform: rotate(5.78deg);
+  -ms-transform: rotate(5.78deg);
+  -o-transform: rotate(5.78deg);
+ }
+ 
+ 
+ a {
+ cursor: pointer;
+ font-family: 'Poppins', sans-serif;
+ text-align: center;
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ transform: ;
+ -webkit-transform:;
+ -moz-transform:;
+ -ms-transform:;
+ -o-transform:;
 }
 
 
@@ -569,6 +590,8 @@ a {
   -ms-transform: rotate(-6.65deg);
   -o-transform: rotate(-6.65deg);
 }
+
+
 
 /* .months {
   margin: auto;
@@ -941,4 +964,44 @@ a {
 
 .rawData {
   background-color: #D7FFC5;
+}
+
+.playBox {
+  box-sizing: border-box;
+
+  position: absolute;
+  width: 83.29px;
+  height: 83.29px;
+  cursor: pointer;
+
+
+  background: #FFC264;
+  border: 1.06786px solid #0A0909;
+  box-shadow: 6.40717px 6.40717px 0px #000000;
+  border-radius: 21.3572px;
+}
+
+.playIcon {
+  position: absolute;
+  width: 26.7px;
+  height: 29.9px;
+  left: calc(50% - 26.7px/2 + 2.67px);
+  top: calc(50% - 29.9px/2 - 0px);
+  border-radius: 3.20359px;
+}
+
+.playBoxContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+}
+
+#questionMark {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 105px;
+  line-height: 105px;
 }
