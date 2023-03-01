@@ -48,11 +48,10 @@ function App() {
     setCount(count + 1);
   }, 1000);
 
-
-
-
   const bDayToday = isToday(startDate)
 
+
+  //Result container
   function Restults({ untilBDay, bDayToday }) {
     let monthDiv, dayDiv, hourDiv, minDiv, sekDiv, puff;
     if (startDate) {
@@ -76,6 +75,7 @@ function App() {
       minDiv = <><div id="questionMark"><span>?</span></div></>;
       sekDiv = <><div id="questionMark"><span>?</span></div></>;
     }
+  //Result container
     return (
       <div className="row rowBottom">
         {bDayToday ? (
@@ -105,6 +105,7 @@ function App() {
   }
 
   //? Why doesn't this work? What's the diff?
+
   // function Restults({untilBDay, bDayToday}) {
   //   let monthDiv, dayDiv, hourDiv, minDiv, sekDiv
   //   if (startDate === undefined) {
@@ -177,7 +178,6 @@ function App() {
                 </div>
               </div>
             </div>
-
             <Restults untilBDay={untilBDay} bDayToday={bDayToday} startDate={startDate} />
           </div>
         </div>
