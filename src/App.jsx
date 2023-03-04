@@ -7,7 +7,7 @@ import "react-datepicker/dist/react-datepicker.css";
 import './App.css'
 import Bigstar from './assets/star1.svg'
 import Smallstar from './assets/star2.svg'
-import Arrow from './assets/Arrow_Horizontal.svg'
+import Arrow from './assets/Arrow_horizontal.svg'
 import PlayIcon from './assets/PlayIcon.svg'
 import GitHubIcon from './assets/GitHubIcon.svg'
 
