@@ -48,7 +48,7 @@ function Restults({ PlayIcon, startDate, untilBDay, bDayToday }) {
     dayDiv = <><div id="questionMark"><span>?</span></div></>;
     hourDiv = <><div id="questionMark"><span>?</span></div></>;
     minDiv = <><div id="questionMark"><span>?</span></div></>;
-    sekDiv = <><div id="questionMark"><span>?</span></div></>;
+    sekDiv = <><div id="questionMark"><span>!</span></div></>;
   }
   //Result container
   return (
