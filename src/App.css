@@ -141,7 +141,7 @@ body {
   -ms-border-radius: 20px;
   -o-border-radius: 20px;
   position: relative;
- 
+
 }
 
 
@@ -230,18 +230,18 @@ nav {
 
 #bigStarSecond {
   position: absolute;
-  width: 48px;
-  height: 48px;
+  width: 51.26px;
+  height: 51.26px;
   left: 23px;
   top: 14px;
 }
 
 #bigStarThird {
   position: absolute;
-  width: 45px;
-  height: 45px;
-  left: 1011px;
-  top: 52px;
+  width: 48.05px;
+  height: 48.05px;
+  right: 6.41px;
+  bottom: 143.09px;
 }
 
 #smallStarFirst {
@@ -262,12 +262,12 @@ nav {
 
 #smallStarThird {
   position: absolute;
-  width: 31px;
-  height: 31px;
-  left: 520px;
-  top: 181px;
-
-
+  width: 33.1px;
+  height: 33.1px;
+  /* right: 555.29px;
+  bottom: 20.3px; */
+  right: 504.3px;
+  bottom: 10.3px;
 }
 
 .infoContainer {
@@ -275,7 +275,32 @@ nav {
   width: 339px;
   padding: var(--pad-primary);
   position: relative;
+  /* display: flex; */
+  /* flex-direction: column;
+  justify-content: left; */
+  text-align: left;
 }
+
+.infoContainer span {
+  font-weight: 700;
+}
+
+#arrow {
+  position: absolute;
+  width: 28px;
+  height: 17px;
+  top: 76px;
+  right: 124px;
+}
+
+#arrow img {
+  transform: rotate();
+  -webkit-transform: rotate(5.78deg);
+  -moz-transform: rotate(5.78deg);
+  -ms-transform: rotate(5.78deg);
+  -o-transform: rotate(5.78deg);
+}
+
 
 
 .logoContainer {
@@ -283,8 +308,13 @@ nav {
   height: 152px;
   background-color: var(--c-mint);
   font-size: 32px;
-  ;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
+
+
+
 .topRight {
   display: flex;
   align-items: center;
@@ -295,7 +325,7 @@ nav {
 }
 
 .topRight p {
-font-weight: 600;
+  font-weight: 600;
 }
 
 .goBtnContainer {
@@ -326,34 +356,20 @@ font-weight: 600;
   position: relative;
 }
 
-#arrow {
- position: absolute;
- width: 28px;
- height: 19px;
- top: 46px;
- right: 60px;
- }
 
- #arrow img {transform: rotate();
-  -webkit-transform: rotate(5.78deg);
-  -moz-transform: rotate(5.78deg);
-  -ms-transform: rotate(5.78deg);
-  -o-transform: rotate(5.78deg);
- }
- 
- 
- a {
- cursor: pointer;
- font-family: 'Poppins', sans-serif;
- text-align: center;
- display: flex;
- align-items: center;
- justify-content: center;
- transform: ;
- -webkit-transform:;
- -moz-transform:;
- -ms-transform:;
- -o-transform:;
+
+a {
+  cursor: pointer;
+  font-family: 'Poppins', sans-serif;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: ;
+  -webkit-transform: ;
+  -moz-transform: ;
+  -ms-transform: ;
+  -o-transform: ;
 }
 
 
@@ -1003,6 +1019,10 @@ font-weight: 600;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 105px;
+
+}
+
+#questionMark span {
+  font-size: 105px; 
   line-height: 105px;
 }
