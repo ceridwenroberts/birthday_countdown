@@ -173,15 +173,15 @@ function App() {
                     </>
                   ) : (<></>)}
                 </div>
-                <a link href="https://dribbble.com/shots/19836318-HUMY-Property-Website" target={"_blank"}> 
+                <a link href="https://dribbble.com/shots/19836318-HUMY-Property-Website" target={"_blank"} rel="noopener noreferrer"> 
                 <div className='infoContainer box'>Like this design? <br /> <span>Checkout HUMY</span><img id="arrow" src={Arrow} alt="arrow icon" />
                 </div>
                 </a>
-                <a link href="https://dribbble.com/shots/19836318-HUMY-Property-Website" target={"_blank"}> <div className='logoContainer box'>
+                <a link href="https://github.com/ceridwenroberts/birthday_countdown.git" target={"_blank"} rel="noopener noreferrer"> <div className='logoContainer box'>
                   <img src={GitHubIcon} /> </div></a>
                 <div className='goBtnContainer'>
 
-                  <a link className='goBtn' href="https://codepen.io/lenasta92579651/pen/VwmGzeL" target={"_blank"}>...and the cake? Click and check it.</a>
+                  <a link className='goBtn' href="https://codepen.io/lenasta92579651/pen/VwmGzeL" target={"_blank"} rel="noopener noreferrer">...and the cake? Click and check it.</a>
                 </div>
               </div>
             </div>

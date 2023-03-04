@@ -1022,7 +1022,12 @@ a {
 
 }
 
-#questionMark span {
+/* #questionMark span {
   font-size: 105px; 
+  line-height: 105px;
+} */
+
+.time {
+  font-size: 90px; 
   line-height: 105px;
 }
